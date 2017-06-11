@@ -1,0 +1,7 @@
+jdbcUrl = jdbc:mysql://localhost:3306/jfinal_demo?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+user = root
+password =123456
+devMode = true
+
+
+domain=http://16o8q48715.imwork.net

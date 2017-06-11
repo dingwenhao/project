@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<object id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width=0 height=0>   
+    <embed id="LODOP_EM" type="application/x-print-lodop" width=0 height=0    pluginspage="/js/print/install_lodop64.exe"></embed>  
+</object> 
+<title>Insert title here</title>
+</head>
+ <script language="javascript" src="/js/jquery-1.4.4.min.js"></script>
+      <script language="javascript" src="/js/JsBarcode.all.min.js"></script>
+     <script language="javascript" src="/js/print/LodopFuncs.js"></script>
+    
+<body>
+
+<div id="biaoqian"><img src="" height="200px" width="140px" id="pritnUserImg2"></div>
+
+
+<input type="button" value="dayin" onclick="printme_1();" />  
+</body>
+<script>
+var str = "123";//获取ID后10位,到时候扫描用like
+var options = {
+		format:"CODE128",
+        displayValue:true,
+        fontSize:18,
+        height:100,
+        width:5
+        };
+$("#pritnUserImg2").JsBarcode(str,options);
+var LODOP; //声明为全局变量    
+function printme_1(){  
+LODOP=getLodop(document.getElementById('LODOP_OB'),document.getElementById('LODOP_EM'));    
+var strFormHtml="<body style='margin-top: 15px;margin-left: 15px;'><h1 style=\" margin:0 auto;\">刘洪建</h1></body>"   
+
+LODOP.SET_PRINT_STYLEA(0,"Angle",35);
+LODOP.ADD_PRINT_BARCODE(50,220,360,150,"Code39","123456789012");
+
+LODOP.ADD_PRINT_HTM(10,300,600,450,strFormHtml);
+
+
+LODOP.PREVIEW();  
+
+}
+
+
+var str = "123";//获取ID后10位,到时候扫描用like
+var options = {
+		format:"CODE128",
+        displayValue:true,
+        fontSize:18,
+        height:100,
+        width:5
+        };
+//$('#pritnUserImg2').JsBarcode(str,options);//jQuery
+  
+
+
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="/js/map.js"></script>
+<script type="text/javascript" src="/js/list.js"></script>
+<body>
+<script type="text/javascript">
+   
+  var map=new Map();
+  map.put("name","刘建标");
+  map.put("age","12");
+  var list=new List();
+  
+  list.add(map);
+
+  var cc=list.get(0);
+  alert(cc.get("name"));
+</script>
+</body>
+</html>

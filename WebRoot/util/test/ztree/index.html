@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<HTML>
+ <HEAD>
+  <TITLE> ZTREE DEMO </TITLE>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="/static/ztree/css/demo.css" type="text/css">
+  <link rel="stylesheet" href="/static/ztree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+  <script type="text/javascript" src="/static/ztree/js/jquery-1.4.4.min.js"></script>
+  <script type="text/javascript" src="/static/ztree/js/jquery.ztree.core.js"></script>
+  <script type="text/javascript" src="/static/ztree/js/jquery.ztree.excheck.js"></script>
+  
+  <SCRIPT LANGUAGE="JavaScript">
+   var zTreeObj;
+   // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
+   var setting = {
+		   treeid:"treeDemo",
+		   treeObj:"tree",
+		   async: {
+				enable: true,
+				type: "post",
+				url: "http://localhost/test/ztreeData",
+				autoParam: ["id", "name"]
+			},
+		   check:{
+			   enable: true,
+			   autoCheckTrigger: true,
+			   chkboxType :{ "Y" : "s", "N" : "ps" }
+		   }
+		   
+   };
+   $(document).ready(function(){
+      zTreeObj = $.fn.zTree.init($("#treeDemo"), setting,null);
+   });
+  </SCRIPT>
+ </HEAD>
+<BODY>
+<div>
+   <ul id="treeDemo" class="ztree"></ul>
+</div>
+</BODY>
+</HTML>
